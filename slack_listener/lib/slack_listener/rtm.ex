@@ -1,15 +1,24 @@
 defmodule SlackListener.Rtm do
+  require Logger
   use Slack
+  @queue "elixir-rabbitmq-demo.messages"
 
   def handle_connect(slack, state) do
-    IO.puts "Connected as #{slack.me.name}"
-    {:ok, state}
+    Logger.info("Connected as #{slack.me.name}")
+
+    {:ok, connection} = Smex.connect("amqp://guest:guest@localhost")
+    {:ok, channel} = Smex.open(connection)
+
+    {:ok, %{channel: channel}}
   end
 
-  def handle_message(message = %{type: "message", text: text}, slack, state) do
-    IO.inspect(text)
+  def handle_message(message = %{type: "message", text: text}, slack, state = %{channel: channel}) do
+    Logger.info("Received message: #{text}")
+    message = PB.Message.new(body: text)
 
-    {:ok, state ++ [text]}
+    :ok = Smex.publish(channel, message, destination: @queue)
+
+    {:ok, state}
   end
 
   def handle_message(_message, _slack, state) do
