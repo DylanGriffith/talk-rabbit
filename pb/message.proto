@@ -1,0 +1,5 @@
+package PB;
+
+message Message {
+  required string body = 1;
+}
