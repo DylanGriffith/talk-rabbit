@@ -1,8 +1,7 @@
 defmodule TalkRabbitFrontend.UserSocket do
   use Phoenix.Socket
 
-  ## Channels
-  # channel "rooms:*", TalkRabbitFrontend.RoomChannel
+  channel "words:*", TalkRabbitFrontend.WordsChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket
