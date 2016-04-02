@@ -17,7 +17,9 @@ defmodule TalkRabbitFrontend.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {TalkRabbitFrontend, []},
-     applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext]]
+      applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext, :smex],
+      included_applications: [:murmur, :exprotobuf, :cloudfoundry_elixir],
+    ]
   end
 
   # Specifies which paths to compile per environment.
@@ -30,6 +32,9 @@ defmodule TalkRabbitFrontend.Mixfile do
   defp deps do
     [{:phoenix, "~> 1.1.4"},
      {:phoenix_html, "~> 2.4"},
+     {:smex, github: "DylanGriffith/smex"},
+     {:cloudfoundry_elixir, git: "https://github.com/pivotal-sydney/cloudfoundry_elixir"},
+     {:exrm, "~> 0.19"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.9"},
      {:cowboy, "~> 1.0"}]

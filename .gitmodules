@@ -1,3 +1,6 @@
 [submodule "slack_listener/pb"]
 	path = slack_listener/pb
 	url = git@github.com:DylanGriffith/talk-rabbit-pb.git
+[submodule "talk_rabbit_frontend/pb"]
+	path = talk_rabbit_frontend/pb
+	url = git@github.com:DylanGriffith/talk-rabbit-pb.git

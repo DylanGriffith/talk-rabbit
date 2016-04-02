@@ -1,0 +1,8 @@
+---
+applications:
+  -
+    name: talk-rabbit-frontent
+    host: dylans-demo
+    memory: 200M
+    buildpack: https://github.com/DylanGriffith/cloudfoundry-buildpack-elixir
+    command: 'rel/slack_listener/bin/slack_listener foreground'
