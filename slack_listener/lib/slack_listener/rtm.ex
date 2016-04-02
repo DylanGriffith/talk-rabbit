@@ -6,8 +6,7 @@ defmodule SlackListener.Rtm do
   def handle_connect(slack, state) do
     Logger.info("Connected as #{slack.me.name}")
 
-    stuff = Smex.connect(CloudfoundryElixir.Credentials.find_by_service_tag("rabbitmq")["uri"] || "amqp://guest:guest@localhost")
-    {:ok, connection} = stuff
+    {:ok, connection} = Smex.connect(CloudfoundryElixir.Credentials.find_by_service_tag("rabbitmq")["uri"] || "amqp://guest:guest@localhost")
     {:ok, channel} = Smex.open(connection)
 
     {:ok, %{channel: channel}}
