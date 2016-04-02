@@ -5,6 +5,7 @@ defmodule SlackListener do
     import Supervisor.Spec, warn: false
 
     children = [
+      worker(CloudfoundryElixir.WebServer, []),
       worker(SlackListener.Rtm, [System.get_env("SLACK_API_TOKEN"), []]),
     ]
 

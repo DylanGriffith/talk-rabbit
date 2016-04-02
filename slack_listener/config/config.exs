@@ -30,4 +30,4 @@ use Mix.Config
 #     import_config "#{Mix.env}.exs"
 
 config :smex,
-  protobuf_dir: IO.inspect(Path.expand("../../pb/", __DIR__))
+  protobuf_dir: Path.expand("../pb/", __DIR__)
