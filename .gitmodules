@@ -4,3 +4,6 @@
 [submodule "talk_rabbit_frontend/pb"]
 	path = talk_rabbit_frontend/pb
 	url = git@github.com:DylanGriffith/talk-rabbit-pb.git
+[submodule "message_processor/pb"]
+	path = message_processor/pb
+	url = git@github.com:DylanGriffith/talk-rabbit-pb.git
