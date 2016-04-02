@@ -9,6 +9,7 @@
 
     <title>Words!!!</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <script>window.ws_base_url = "<%= TalkRabbitFrontend.Endpoint.ws_base_url %>";</script>
   </head>
 
   <body>

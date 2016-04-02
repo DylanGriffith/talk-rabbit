@@ -8,6 +8,8 @@ use Mix.Config
 # with brunch.io to recompile .js and .css sources.
 config :talk_rabbit_frontend, TalkRabbitFrontend.Endpoint,
   http: [port: 4000],
+  url: [host: "localhost"],
+  websocket:  [scheme: "ws", port: 4000],
   debug_errors: true,
   code_reloader: true,
   check_origin: false,

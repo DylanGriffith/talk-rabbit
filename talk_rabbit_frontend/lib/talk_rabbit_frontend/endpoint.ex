@@ -36,4 +36,11 @@ defmodule TalkRabbitFrontend.Endpoint do
     signing_salt: "XAgcIF0t"
 
   plug TalkRabbitFrontend.Router
+
+  def ws_base_url do
+    scheme = Application.get_env(:talk_rabbit_frontend, TalkRabbitFrontend.Endpoint)[:websocket][:scheme]
+    port = Application.get_env(:talk_rabbit_frontend, TalkRabbitFrontend.Endpoint)[:websocket][:port]
+    host = Application.get_env(:talk_rabbit_frontend, TalkRabbitFrontend.Endpoint)[:url][:host]
+    "#{scheme}://#{host}:#{port}"
+  end
 end

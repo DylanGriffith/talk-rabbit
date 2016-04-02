@@ -13,7 +13,8 @@ use Mix.Config
 # which you typically run after static files are built.
 config :talk_rabbit_frontend, TalkRabbitFrontend.Endpoint,
   http: [port: {:system, "PORT"}],
-  url: [host: "dylans-demo.cfapps.io", port: 80],
+  url: [host: "dylans-demo.cfapps.io"],
+  websocket:  [scheme: "wss", port: 4443],
   cache_static_manifest: "priv/static/manifest.json",
   server: true
 
