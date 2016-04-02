@@ -13,7 +13,10 @@
   </head>
 
   <body>
-    <div class="container word-cloud">
+    <div class="container">
+      <%= render @view_module, @view_template, assigns %>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.min.js"></script>
     <script src="/d3.layout.cloud.js"></script>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
