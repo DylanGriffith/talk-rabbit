@@ -30,6 +30,6 @@ defmodule TalkRabbitFrontend.Listener do
 
     Smex.ack(chan, meta)
 
-    {:ok, state}
+    {:noreply, state}
   end
 end
