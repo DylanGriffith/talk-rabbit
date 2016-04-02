@@ -6,11 +6,11 @@ defmodule TalkRabbitFrontend.Listener do
   @queue "elixir-rabbitmq-demo.word_counts"
 
   def start_link(rabbit_url) do
-    GenServer.start_link(__MODULE__, [rabbit_url])
+    GenServer.start_link(__MODULE__, rabbit_url)
   end
 
   def init(rabbit_url) do
-    Logger.info("Connecting to #{rabbit_url}")
+    Logger.info("Connecting to #{inspect(rabbit_url)}")
     {:ok, connection} = Smex.connect(rabbit_url)
     {:ok, channel} = Smex.open(connection)
 
@@ -30,6 +30,6 @@ defmodule TalkRabbitFrontend.Listener do
 
     Smex.ack(chan, meta)
 
-    {:stop, :normal, state}
+    {:ok, state}
   end
 end
