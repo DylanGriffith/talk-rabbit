@@ -15,6 +15,7 @@ defmodule MessageProcessor.Mixfile do
   # Type "mix help compile.app" for more information
   def application do
     [applications: [:logger],
+     included_applications: [],
      mod: {MessageProcessor, []}]
   end
 
@@ -28,6 +29,8 @@ defmodule MessageProcessor.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [
+      {:exrm, "~> 0.19"},
+    ]
   end
 end
