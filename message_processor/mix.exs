@@ -14,8 +14,8 @@ defmodule MessageProcessor.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger],
-     included_applications: [],
+    [applications: [:logger, :smex],
+     included_applications: [:murmur, :plug, :cowboy, :exprotobuf, :cloudfoundry_elixir, :poison],
      mod: {MessageProcessor, []}]
   end
 
@@ -30,7 +30,9 @@ defmodule MessageProcessor.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
+      {:cloudfoundry_elixir, git: "https://github.com/pivotal-sydney/cloudfoundry_elixir"},
       {:exrm, "~> 0.19"},
+      {:smex, github: "DylanGriffith/smex"},
     ]
   end
 end

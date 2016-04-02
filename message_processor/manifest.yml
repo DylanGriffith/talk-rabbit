@@ -1,0 +1,7 @@
+---
+applications:
+  -
+    name: talk-rabbit-message-processor
+    memory: 100M
+    buildpack: https://github.com/DylanGriffith/cloudfoundry-buildpack-elixir
+    command: 'rel/message_processor/bin/message_processor foreground'
