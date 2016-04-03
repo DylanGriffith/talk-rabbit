@@ -20,7 +20,7 @@ defmodule TalkRabbitFrontend.Listener do
   end
 
   def handle_cast({:smex_message, m = %PB.WordCounts{}, meta}, state = %{channel: chan}) do
-    Logger.info("Received a PB.Message: #{inspect(m)}")
+    Logger.info("Received a PB.WordCounts: #{inspect(m)}")
 
     data = m.word_counts |> Enum.map(fn(wc) ->
       {wc.word, wc.count}
