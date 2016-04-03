@@ -142,9 +142,12 @@ end
 # Demo
 
 # dylans-demos.slack.com
-```ruby
-elixir.is.cool@gmail.com
-elixir123
+
+```elixir
+slack_credentials = %{
+  email: "elixir.is.cool@gmail.com",
+  password: "elixir123"
+}
 ```
 
 ---
