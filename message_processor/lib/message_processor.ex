@@ -6,8 +6,11 @@ defmodule MessageProcessor do
   def start(_type, _args) do
     import Supervisor.Spec, warn: false
 
+    rabbit_url = CloudfoundryElixir.Credentials.find_by_service_tag("rabbitmq")["uri"] || "amqp://guest:guest@localhost"
+
     children = [
       worker(CloudfoundryElixir.WebServer, []),
+      worker(MessageProcessor.Listener, [rabbit_url]),
     ]
 
     opts = [strategy: :one_for_one, name: MessageProcessor.Supervisor]
