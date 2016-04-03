@@ -3,13 +3,11 @@ slidenumbers: true
 
 # So Hot Right Now
 - Elixir
-- Live Demos
-- Audience Participation
 - Slack
 
 ---
 
-# Audience Participation And Slack
+# Audience Participation
 Later!
 
 # dylans-demos.slack.com
