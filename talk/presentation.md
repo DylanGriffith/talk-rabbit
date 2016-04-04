@@ -36,8 +36,8 @@ Later!
 
 # Protocol Buffers
 - "extensible mechanism for serializing structured data"
-- Type Safety
-- Many Languages
+- Type Safety In Many Languages
+- Fast
 
 ```protobuf
 package PB;
