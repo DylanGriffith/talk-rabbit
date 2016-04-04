@@ -7,3 +7,6 @@
 [submodule "message_processor/pb"]
 	path = message_processor/pb
 	url = git@github.com:DylanGriffith/talk-rabbit-pb.git
+[submodule "twitter_stream/pb"]
+	path = twitter_stream/pb
+	url = git@github.com:DylanGriffith/talk-rabbit-pb.git
