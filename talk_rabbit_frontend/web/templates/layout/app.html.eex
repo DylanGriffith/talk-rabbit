@@ -13,9 +13,7 @@
   </head>
 
   <body>
-    <div class="container">
-      <%= render @view_module, @view_template, assigns %>
-    </div>
+    <%= render @view_module, @view_template, assigns %>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.min.js"></script>
     <script src="/d3.layout.cloud.js"></script>

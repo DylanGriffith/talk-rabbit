@@ -32,7 +32,7 @@ channel.on("words", payload => {
   var fill = d3.scale.category20();
 
   var layout = d3.layout.cloud()
-  .size([1000, 1000])
+  .size([2000, 1000])
   .words(payload.data)
   .padding(5)
   .rotate(function() { return ~~(Math.random() * 2) * 90; })
