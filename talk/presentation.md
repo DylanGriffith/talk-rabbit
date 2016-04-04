@@ -1,6 +1,10 @@
 footer: github.com/DylanGriffith
 slidenumbers: true
 
+# Welcome
+
+---
+
 # So Hot Right Now
 - Elixir
 - Slack
@@ -23,7 +27,7 @@ Later!
 ---
 
 # RabbitMQ
-- Robust messaging for applications
+- "Robust messaging for applications"
 - Open Source
 - Many Languages
 - Erlang :heart_eyes_cat:
