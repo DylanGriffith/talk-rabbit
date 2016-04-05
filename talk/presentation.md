@@ -129,7 +129,7 @@ end
 
 ```elixir
 def handle_cast({:smex_message, m = %PB.WordCounts{}, meta}, state = %{channel: chan}) do
-  data = transform_to_d3(m)
+  data = transform_to_map(m)
 
   TalkRabbitFrontend.Endpoint.broadcast("words", "words", data)
 
