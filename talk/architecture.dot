@@ -1,0 +1,8 @@
+digraph G {
+  rankdir="LR";
+  slack -> slack_listener [label="websockets"];
+  slack_listener -> word_counter [label="rabbitmq"];
+  word_counter -> data_transformer [label="rabbitmq"];
+  data_transformer -> phoenix_endpoint [label="phoenix channels"];
+  phoenix_endpoint -> browser_client [label="websockets"];
+}

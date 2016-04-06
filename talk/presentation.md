@@ -141,6 +141,10 @@ end
 
 ---
 
+![fit](architecture.png)
+
+---
+
 # Demo
 
 # dylans-demos.slack.com
