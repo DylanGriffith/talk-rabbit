@@ -1,7 +1,7 @@
 footer: github.com/DylanGriffith
 slidenumbers: true
 
-# Welcome
+# Yo!
 
 ---
 
@@ -36,14 +36,14 @@ Later!
 
 # Protocol Buffers
 - "extensible mechanism for serializing structured data"
-- Type Safety In Many Languages
 - Fast
+- Map Neatly To Elixir Structs
 
 ```protobuf
 package PB;
 
-message Greeting {
-  required string greeting = 1;
+message Message {
+  required string body = 1;
 }
 ```
 
@@ -58,7 +58,7 @@ Now made easy with smex! (inspired by smith)
 {:ok, connection} = Smex.connect("amqp://guest:guest@localhost")
 {:ok, channel} = Smex.open(connection)
 
-message = PB.Greeting{greeting: "Hello, World!")
+message = PB.Message{body: "Hello, World!"}
 :ok = Smex.publish(channel, message,
   destination: "smex.test.some_test_queue"
 )
@@ -163,6 +163,3 @@ slack_credentials = %{
 - https://github.com/DylanGriffith/talk-rabbit
 - https://github.com/DylanGriffith/smex
 - https://github.com/filterfish/smith2
-
----
-
